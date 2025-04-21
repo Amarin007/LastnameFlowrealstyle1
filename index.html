@@ -1,0 +1,801 @@
+
+<html lang="th">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Flowrealstyle 1 Year</title>
+
+  <!-- ปิด Facebook/Twitter preview -->
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
+  <meta name="twitter:card" content="none" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Prompt', sans-serif;
+        background-color: #f3efff;
+        background-image: url('https://i.postimg.cc/ZRNSMyJw/20250415205949-1.png');
+        background-size: cover;
+        background-position: center;
+      }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      margin-top: 3rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #2e1065;
+    }
+
+    .section-title {
+      margin-top: 3rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      border-bottom: 3px solid #a855f7;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      color: #2e1065;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .card img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      margin: 0.5rem 0 0.2rem;
+      font-size: 1.1rem;
+      color: #1e1b4b;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    .card button {
+      margin-top: 0.8rem;
+      padding: 0.4rem 1rem;
+      background: white;
+      border: 2px solid #a855f7;
+      color: #a855f7;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background: #a855f7;
+      color: white;
+    }
+  
+    #searchInput {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 1rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    #searchInput:focus {
+      outline: none;
+      border-color: #a855f7;
+      box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.3);
+    }
+
+    #searchResults {
+      position: absolute;
+      top: 115px;
+      left: 30px;
+      width: 200px;
+      background-color: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      max-height: 200px;
+      overflow-y: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      padding: 0.5rem 0.8rem;
+    }
+
+    #searchResults li a {
+      text-decoration: none;
+      color: #4c1d95;
+      font-size: 0.95rem;
+      display: block;
+      padding: 0.2rem 0;
+      transition: background-color 0.2s;
+    }
+
+    #searchResults li a:hover {
+      background-color: #f3e8ff;
+      border-radius: 4px;
+    }
+    
+.tab-container {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 10px;
+  margin-top: 1rem;
+}
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  color: #444;
+}
+.tab.active {
+  border-bottom: 3px solid #7D4EFF;
+  color: #7D4EFF;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: grid;
+}
+
+.tab-container {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 10px;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  color: #444;
+}
+.tab.active {
+  border-bottom: 3px solid #7D4EFF;
+  color: #7D4EFF;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+.tab-card-wrapper {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+</style>
+<style>
+      .search-bar-container {
+        margin: 30px auto;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+      }
+      .search-input {
+        width: 100%;
+        max-width: 600px;
+        padding: 15px;
+        font-size: 18px;
+        border-radius: 30px;
+        border: 2px solid #ccc;
+      }
+      button[type="submit"] {
+        margin-left: 10px;
+        padding: 15px 20px;
+        font-size: 18px;
+        border-radius: 30px;
+        border: none;
+        background-color: #3c0d82;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+<style>
+.member-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.member-grid .flex {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  text-align: center;
+}
+</style></head>
+<body>
+<div style="position: absolute; top: 30px; left: 30px; width: 200px; background-color: rgba(255, 255, 255, 0.85); border-radius: 12px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 999;">
+<h3 style="color: red; font-size: 1.3rem; margin-top: 0;">ช่องค้นหา</h3>
+<input id="searchInput" placeholder="ค้นหาชื่อ..." style="width: 100%; padding: 0.5rem; border-radius: 8px; border: 1px solid #ccc;" type="text"/>
+<ul id="searchResults" style="list-style: none; padding: 0; font-size: 0.9rem;"></ul>
+</div>
+<div class="container">
+<h1>Welcome to Flowrealstyle 1 Year!</h1>
+<div class="tab-container" style="display: flex; justify-content: center; gap: 4rem; margin-top: 1rem;">
+<div class="tab active" onclick="switchTab('all-members')" style="font-size: 1.3rem;">สมาชิกทั้งหมด</div>
+<div class="tab" onclick="switchTab('bysup')">BY/SUP</div>
+</div>
+<div class="tab-content" id="bysup">
+<style>
+  .profile-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .profile-box:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-box img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .profile-name {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .profile-role {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .profile-button {
+    border: 1px solid #a855f7;
+    padding: 5px 15px;
+    border-radius: 8px;
+    background: white;
+    color: #a855f7;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .profile-button:hover {
+    background: #a855f7;
+    color: white;
+  }
+
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+  }
+</style>
+<div class="profiles-grid">
+<!-- ใส่เฉพาะกล่องสมาชิกของ BY/SUP ที่นี่ -->
+<div class="profile-box">
+<img src="https://i.postimg.cc/xdQLVN7x/482261935-1346708750011646-4810695079857350329-n.jpg"/>
+<div class="profile-name">Paul Winterfell</div>
+<div class="profile-role">Support WinterfellSmit</div>
+<a href="https://www.facebook.com/PaulWinterfell"><button class="profile-button">ดูโปรไฟล์</button></a>
+</div>
+<!-- Luka -->
+<div class="profile-box">
+<img src="https://i.postimg.cc/tgvpS9yr/Screenshot-2025-04-22-000305.png"/>
+<div class="profile-name">Luka Winterfell</div>
+<div class="profile-role">Support WinterfellHydra</div>
+<a href="https://www.facebook.com/intel.winterfell"><button class="profile-button">ดูโปรไฟล์</button></a>
+</div>
+<!-- Lazy -->
+<div class="profile-box">
+<img src="https://i.postimg.cc/PJWGjHsn/Screenshot-2025-04-22-000309.png"/>
+<div class="profile-name">Lazy Exceed</div>
+<div class="profile-role">Support Realyouknow</div>
+<a href="https://www.facebook.com/profile.php?id=61556594403181"><button class="profile-button">ดูโปรไฟล์</button></a>
+</div>
+<!-- Hades -->
+<div class="profile-box">
+<img src="https://i.postimg.cc/0NMBvvDX/Screenshot-2025-04-22-000314.png"/>
+<div class="profile-name">Hades Diamondonsnow</div>
+<div class="profile-role">Support Snowallstar</div>
+<a href="https://www.facebook.com/Hadesdiamondonsnow"><button class="profile-button">ดูโปรไฟล์</button></a>
+</div>
+<!-- Ralph Winterfell  -->
+<div class="profile-box">
+<img src="https://i.postimg.cc/pLnfXLcj/Screenshot-2025-04-22-000320.png"/>
+<div class="profile-name">Ralph Winterfell </div>
+<div class="profile-role">Support</div>
+<a href="https://www.facebook.com/Hadesdiamondonsnow"><button class="profile-button">ดูโปรไฟล์</button></a>
+</div>
+<!-- Roy Estelle  -->
+<div class="profile-box">
+<img src="https://i.postimg.cc/2jKLbfZ7/Screenshot-2025-04-22-000325.png"/>
+<div class="profile-name">Roy Estelle </div>
+<div class="profile-role">Support</div>
+<a href="https://www.facebook.com/photo/?fbid=655503080779334&amp;set=pob.100089589440273"><button class="profile-button">ดูโปรไฟล์</button></a>
+</div>
+<!-- Tiger Delta  -->
+<div class="profile-box">
+<img src="https://i.postimg.cc/2Sf6hj8h/Screenshot-2025-04-22-000330.png"/>
+<div class="profile-name">Tiger Delta </div>
+<div class="profile-role">Support</div>
+<a href="http://facebook.com/tiger.delta.2024"><button class="profile-button">ดูโปรไฟล์</button></a>
+</div>
+<!-- แพทริค บียอนก็อต  -->
+<div class="profile-box">
+<img src="https://i.postimg.cc/0jzDJXQj/Screenshot-2025-04-21-232815.png"/>
+<div class="profile-name">แพทริค บียอนก็อต </div>
+<div class="profile-role">Support</div>
+<a href="https://www.facebook.com/share/1F34tKQhPe/?mibextid=wwXIfr"><button class="profile-button">ดูโปรไฟล์</button></a>
+</div>
+</div>
+</div>
+<div class="tab-content active" id="all-members"><div class="tab-card-wrapper">
+</div>
+<div class="tab-content" id="bysup"><div class="tab-card-wrapper">
+<div class="card" id="Delta KingFlowreal">
+<img src="https://i.postimg.cc/GhHZ7yzG/Screenshot-2025-04-22-002044.png">
+<h3>Delta KingFlowreal</h3>
+<p>Theboss</p>
+<a href="https://www.facebook.com/DeltaRealyouknow">
+<button>ดูโปรไฟล์</button>
+</a>
+</img></div>
+<div class="card" id="ren-dekflowreal">
+<img src="https://i.postimg.cc/rmrc780J/Screenshot-2025-04-21-232809.png">
+<h3>Ren DekFlowreal</h3>
+<p>TheBossDekFlowreal </p>
+<a href="https://www.facebook.com/fino.kung.752">
+<button>ดูโปรไฟล์</button>
+</a>
+</img></div>
+<div class="card" id="Daren Rankone">
+<img src="https://i.postimg.cc/28PtX4dP/Screenshot-2025-04-21-233156.png">
+<h3>Daren Rankone</h3>
+<p>Leader</p>
+<a href="https://www.facebook.com/profile.php?id=61573104148791">
+<button>ดูโปรไฟล์</button>
+</a>
+</img></div>
+<div class="card" id="highbox">
+<img src="https://i.postimg.cc/gkqM4fJ6/Screenshot-2025-04-21-232730.png">
+<h3>HIGHBOX</h3>
+<p>สมาชิกหมายเลข 1</p>
+<a href="https://www.facebook.com/share/164PWEfrBH/?mibextid=wwXIfr">
+<button>ดูโปรไฟล์</button>
+</a>
+</img></div>
+<div class="card" id="darin-raimarayart">
+<img src="https://i.postimg.cc/DwSXmXty/Screenshot-2025-04-21-232738.png">
+<h3>Darin Raimarayart</h3>
+<p>สมาชิกหมายเลข 2</p>
+<a href="https://www.facebook.com/share/16G868nxvy/">
+<button>ดูโปรไฟล์</button>
+</a>
+</img></div>
+<div class="card" id="con-f-blot">
+<img src="https://i.postimg.cc/KYFxCXrS/Screenshot-2025-04-21-232746.png">
+<h3>Con F’Blot</h3>
+<p>สมาชิกหมายเลข 3</p>
+<a href="https://www.facebook.com/profile.php?id=61562870581972">
+<button>ดูโปรไฟล์</button>
+</a>
+</img></div>
+<div class="card" id="scale-undergrxund">
+<img src="https://i.postimg.cc/GhCR4wVB/Screenshot-2025-04-21-232757.png">
+<p>สมาชิกหมายเลข 4</p>
+<a href="https://www.facebook.com/share/1ANfjZpnZy/">
+<button>ดูโปรไฟล์</button>
+</a>
+</img></div>
+<div class="card" id="ดราฟ-อเล-กซ-ซานเดอร-">
+<img src="https://i.postimg.cc/X7QP4Rb6/Screenshot-2025-04-21-232803.png">
+<p>สมาชิกหมายเลข 5</p>
+<a href="https://www.facebook.com/profile.php?id=100092387434166">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Junior Flowreal">
+<img alt="Profile" src="https://i.postimg.cc/zB8wLfCt/Screenshot-2025-04-21-232917.png"/>
+<h3>Junior Flowreal</h3>
+<p>สมาชิกหมายเลข 6</p>
+<a href="https://www.facebook.com/share/1Z7BAN4jrN/">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Smit Verdra">
+<img alt="Profile" src="https://i.postimg.cc/XqZrXMz1/Screenshot-2025-04-21-232825.png"/>
+<h3>Smit Verdra</h3>
+<p>สมาชิกหมายเลข 7</p>
+<a href="https://www.facebook.com/share/16FwCA4PAS/">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="youngbxy smit">
+<img src="https://i.postimg.cc/xdc86V0f/Screenshot-2025-04-21-232831.png"/>
+<h3>youngbxy smit</h3>
+<p>สมาชิกหมายเลข 8</p>
+<a href="https://www.facebook.com/share/1BbQQ3hsco/?mibextid=wwXIfr">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Alphaa Xclass">
+<img src="https://i.postimg.cc/h4bDbt98/Screenshot-2025-04-21-232839.png"/>
+<h3>Alphaa Xclass</h3>
+<p>สมาชิกหมายเลข 9</p>
+<a href="https://www.facebook.com/alphaa.wintercry">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Nongmond RankoneXzent">
+<img src="https://i.postimg.cc/BQ6rLSNn/Screenshot-2025-04-21-232845.png"/>
+<h3>Nongmond RankoneXzent</h3>
+<p>สมาชิกหมายเลข 10</p>
+<a href="https://www.facebook.com/profile.php?id=61572807633030">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="ซิกก้า ชนชั้นสูง">
+<img src="https://i.postimg.cc/MZ4D5zqT/Screenshot-2025-04-21-232850.png"/>
+<h3>ซิกก้า ชนชั้นสูง</h3>
+<p>สมาชิกหมายเลข 11</p>
+<a href="https://www.facebook.com/share/16CcftUws4/?mibextid=wwXIfr">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Valentine Blacklist">
+<img src="https://i.postimg.cc/qqfGkGmK/Screenshot-2025-04-21-232859.png"/>
+<h3>Valentine Blacklist</h3>
+<p>สมาชิกหมายเลข 12</p>
+<a href="https://www.facebook.com/Valentineblacklist">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="ซียู สเตนเกอร์กิฟ">
+<img src="https://i.postimg.cc/sDjT1TjP/Screenshot-2025-04-21-233836.png"/>
+<h3>ซียู สเตนเกอร์กิฟ</h3>
+<p>สมาชิกหมายเลข 13</p>
+<a href="https://www.facebook.com/profile.php?id=61557090103843">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Luke Sixsense">
+<img src="https://i.postimg.cc/T3tdZdQ8/Screenshot-2025-04-21-233927.png"/>
+<h3>Luke Sixsense</h3>
+<p>สมาชิกหมายเลข 14</p>
+<a href="https://www.facebook.com/luke.sixtyone">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Nero Winterfellzera">
+<img src="https://cdn.discordapp.com/attachments/1363085972996358225/1363192983901569396/IMG_0647.png?ex=680523e6&amp;is=6803d266&amp;hm=969703e7624b2af10b8dfcb2fd7b4cafe10a2f9db560efdf06e84bfba9384a61&amp;"/>
+<h3>Nero Winterfellzera</h3>
+<p>สมาชิกหมายเลข 15</p>
+<a href="https://www.facebook.com/share/19EXPGTFXb/?mibextid=LQQJ4d">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Jayv Sabudbob">
+<img src="https://i.postimg.cc/DzQg2NJK/Screenshot-2025-04-21-232907.png"/>
+<h3>Jayv Sabudbob</h3>
+<p>สมาชิกหมายเลข 16</p>
+<a href="https://www.facebook.com/share/1ELb2J5xHe/?mibextid=wwXIfr">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Lucky Justyousleep">
+<img src="https://cdn.discordapp.com/attachments/1297239266371436646/1363196311125491753/487309239_629577983225827_7852343497775381732_n.jpg?ex=680526ff&amp;is=6803d57f&amp;hm=1d9190f95c9aeda94179c4434729f405c3fa669c1024a97f8e8e79e2e25a09e4&amp;"/>
+<h3>Lucky Justyousleep</h3>
+<p>สมาชิกหมายเลข 18</p>
+<a href="https://www.facebook.com/lucky.Justyousleep?locale=th_TH">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+</div>
+</div>
+<div class="card-grid">
+<div class="card" id="delta-kingflowreal">
+<img alt="Profile" src="https://i.postimg.cc/XNg7WY1H/Screenshot-2025-04-21-233207.png"/>
+<h3>Delta KingFlowreal</h3>
+<p>TheBoss </p>
+<a href="https://www.facebook.com/DeltaRealyouknow">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="ren-dekflowreal">
+<img src="https://i.postimg.cc/rmrc780J/Screenshot-2025-04-21-232809.png"/>
+<h3>Ren DekFlowreal</h3>
+<p>TheBossDekFlowreal </p>
+<a href="https://www.facebook.com/fino.kung.752">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Daren Rankone">
+<img src="https://i.postimg.cc/28PtX4dP/Screenshot-2025-04-21-233156.png"/>
+<h3>Daren Rankone</h3>
+<p>Leader</p>
+<a href="https://www.facebook.com/profile.php?id=61573104148791">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="highbox">
+<img alt="Profile" src="https://i.postimg.cc/gkqM4fJ6/Screenshot-2025-04-21-232730.png"/>
+<h3>HIGHBOX</h3>
+<p>สมาชิกหมายเลข 1</p>
+<a href="https://www.facebook.com/share/164PWEfrBH/?mibextid=wwXIfr">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="darin-raimarayart">
+<img alt="Profile" src="https://i.postimg.cc/DwSXmXty/Screenshot-2025-04-21-232738.png"/>
+<h3>Darin Raimarayart</h3>
+<p>สมาชิกหมายเลข 2</p>
+<a href="https://www.facebook.com/share/16G868nxvy/">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="con-f-blot">
+<img alt="Profile" src="https://i.postimg.cc/KYFxCXrS/Screenshot-2025-04-21-232746.png"/>
+<h3>Con F’Blot</h3>
+<p>สมาชิกหมายเลข 3</p>
+<a href="https://www.facebook.com/profile.php?id=61562870581972">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="scale-undergrxund">
+<img alt="Profile" src="https://i.postimg.cc/GhCR4wVB/Screenshot-2025-04-21-232757.png"/>
+<h3>Scale Undergrxund</h3>
+<p>สมาชิกหมายเลข 4</p>
+<a href="https://www.facebook.com/share/1ANfjZpnZy/">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="ดราฟ-อเล-กซ-ซานเดอร-">
+<img alt="Profile" src="https://i.postimg.cc/X7QP4Rb6/Screenshot-2025-04-21-232803.png"/>
+<h3>ดราฟ อเล็กซ์ซานเดอร์</h3>
+<p>สมาชิกหมายเลข 5</p>
+<a href="https://www.facebook.com/profile.php?id=100092387434166">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Junior Flowreal">
+<img alt="Profile" src="https://i.postimg.cc/zB8wLfCt/Screenshot-2025-04-21-232917.png"/>
+<h3>Junior Flowreal</h3>
+<p>สมาชิกหมายเลข 6</p>
+<a href="https://www.facebook.com/share/1Z7BAN4jrN/">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Smit Verdra">
+<img alt="Profile" src="https://i.postimg.cc/XqZrXMz1/Screenshot-2025-04-21-232825.png"/>
+<h3>Smit Verdra</h3>
+<p>สมาชิกหมายเลข 7</p>
+<a href="https://www.facebook.com/share/16FwCA4PAS/">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="youngbxy smit">
+<img src="https://i.postimg.cc/xdc86V0f/Screenshot-2025-04-21-232831.png"/>
+<h3>youngbxy smit</h3>
+<p>สมาชิกหมายเลข 8</p>
+<a href="https://www.facebook.com/share/1BbQQ3hsco/?mibextid=wwXIfr">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Alphaa Xclass">
+<img src="https://i.postimg.cc/h4bDbt98/Screenshot-2025-04-21-232839.png"/>
+<h3>Alphaa Xclass</h3>
+<p>สมาชิกหมายเลข 9</p>
+<a href="https://www.facebook.com/alphaa.wintercry">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Nongmond RankoneXzent">
+<img src="https://i.postimg.cc/BQ6rLSNn/Screenshot-2025-04-21-232845.png"/>
+<h3>Nongmond RankoneXzent</h3>
+<p>สมาชิกหมายเลข 10</p>
+<a href="https://www.facebook.com/profile.php?id=61572807633030">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="ซิกก้า ชนชั้นสูง">
+<img src="https://i.postimg.cc/MZ4D5zqT/Screenshot-2025-04-21-232850.png"/>
+<h3>ซิกก้า ชนชั้นสูง</h3>
+<p>สมาชิกหมายเลข 11</p>
+<a href="https://www.facebook.com/share/16CcftUws4/?mibextid=wwXIfr">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Valentine Blacklist">
+<img src="https://i.postimg.cc/qqfGkGmK/Screenshot-2025-04-21-232859.png"/>
+<h3>Valentine Blacklist</h3>
+<p>สมาชิกหมายเลข 12</p>
+<a href="https://www.facebook.com/Valentineblacklist">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="ซียู สเตนเกอร์กิฟ">
+<img src="https://i.postimg.cc/sDjT1TjP/Screenshot-2025-04-21-233836.png"/>
+<h3>ซียู สเตนเกอร์กิฟ</h3>
+<p>สมาชิกหมายเลข 13</p>
+<a href="https://www.facebook.com/profile.php?id=61557090103843">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Luke Sixsense">
+<img src="https://i.postimg.cc/T3tdZdQ8/Screenshot-2025-04-21-233927.png"/>
+<h3>Luke Sixsense</h3>
+<p>สมาชิกหมายเลข 14</p>
+<a href="https://www.facebook.com/luke.sixtyone">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Nero Winterfellzera">
+<img src="https://i.postimg.cc/DzQg2NJK/Screenshot-2025-04-21-232907.png"/>
+<h3>Nero Winterfellzera</h3>
+<p>สมาชิกหมายเลข 15</p>
+<a href="https://www.facebook.com/share/19EXPGTFXb/?mibextid=LQQJ4d">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Jayv Sabudbob">
+<img src="https://i.postimg.cc/Y9Gc9gg7/Screenshot-2025-04-21-235214.png"/>
+<h3>Jayv Sabudbob</h3>
+<p>สมาชิกหมายเลข 16</p>
+<a href="https://www.facebook.com/share/1ELb2J5xHe/?mibextid=wwXIfr">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Lucky Justyousleep">
+<img src="https://i.postimg.cc/vBRhr6kb/Screenshot-2025-04-21-235245.png"/>
+<h3>Lucky Justyousleep</h3>
+<p>สมาชิกหมายเลข 18</p>
+<a href="https://www.facebook.com/lucky.Justyousleep?locale=th_TH">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Jody Justidontknow">
+<img src="https://i.postimg.cc/xdkYkWDB/Screenshot-2025-04-21-235333.png"/>
+<h3>Jody Justidontknow</h3>
+<p>สมาชิกหมายเลข 19</p>
+<a href="https://www.facebook.com/profile.php?id=61572652610989&amp;locale=th_TH">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Draff Twentynine ">
+<img src="https://i.postimg.cc/9MtkzpMv/Screenshot-2025-04-21-232924.png"/>
+<h3>Draff Twentynine </h3>
+<p>สมาชิกหมายเลข 20</p>
+<a href="https://www.facebook.com/profile.php?id=61556974015890&amp;mibextid=wwXIfr&amp;mibextid=wwXIfr">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="เจ้าเนป อเวจี">
+<img src="https://i.postimg.cc/2jtQhWZJ/Screenshot-2025-04-21-235453.png"/>
+<h3>เจ้าเนป อเวจี</h3>
+<p>สมาชิกหมายเลข 21</p>
+<a href="https://www.facebook.com/share/12HH8RViHg5/?mibextid=wwXIfr">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Merlin Lnterfia">
+<img src="https://i.postimg.cc/3RdBQFGX/Screenshot-2025-04-21-232930.png"/>
+<h3>Merlin Lnterfia</h3>
+<p>สมาชิกหมายเลข 22</p>
+<a href="https://www.facebook.com/share/16WgMYUpHx/">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Seeyou Raimarayart ">
+<img src="https://i.postimg.cc/TPhmKYPG/Screenshot-2025-04-21-232939.png"/>
+<h3>Seeyou Raimarayart </h3>
+<p>สมาชิกหมายเลข 23</p>
+<a href="https://www.facebook.com/seeyou1flowlessxj.339">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+<div class="card" id="Refer R. Type  ">
+<img src="https://i.postimg.cc/151J1VrL/475837874-585044898015102-9098072283507292711-n.jpg"/>
+<h3>Refer R. Type </h3>
+<p>สมาชิกหมายเลข 24</p>
+<a href="https://www.facebook.com/ReferKrub">
+<button>ดูโปรไฟล์</button>
+</a>
+</div>
+</div>
+</div>
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const searchResults = document.getElementById("searchResults");
+  const cards = document.querySelectorAll(".card");
+
+  searchInput.addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    searchResults.innerHTML = "";
+
+    cards.forEach((card) => {
+      const name = card.querySelector("h3").innerText.toLowerCase();
+      const isMatch = name.includes(query);
+      card.style.display = isMatch ? "block" : "none";
+
+      if (isMatch && query !== "") {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = "#" + card.id;
+        a.textContent = card.querySelector("h3").innerText;
+        a.style.textDecoration = "none";
+        a.style.color = "#7e22ce";
+        a.style.display = "block";
+        a.style.marginBottom = "0.3rem";
+        li.appendChild(a);
+        searchResults.appendChild(li);
+      }
+    });
+  });
+
+function switchTab(tabId) {
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => tab.classList.remove('active'));
+  contents.forEach(content => content.classList.remove('active'));
+
+  document.querySelector(`.tab[onclick="switchTab('${tabId}')"]`).classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+</script>
+</div><div class="member-grid"></div></body></html>
